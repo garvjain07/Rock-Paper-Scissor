@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#111633">
+    <meta name="description" content="Play Rock Paper Scissors online - a fast, fun game with scores, streaks and keyboard controls.">
+    <meta name="keywords" content="rock paper scissors, rock paper scissor game, online game, browser game">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Rock Paper Scissors - Play Online">
+    <meta property="og:description" content="Challenge the computer in a polished Rock Paper Scissors game.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/logo.png">
+    <title>Rock Paper Scissors - Play Online</title>
+    <link rel="canonical" href="/">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="apple-touch-icon" href="images/logo.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="game-shell">
+        <header class="topbar">
+            <a class="brand" href="/" aria-label="Rock Paper Scissors home">
+                <img src="images/logo.png" alt="" width="58" height="58">
+                <span>
+                    <strong>RPS</strong>
+                    <small>Game</small>
+                </span>
+            </a>
+            <div class="header-actions">
+                <button class="icon-button" id="sound-toggle" type="button" aria-label="Mute sound" title="Sound">
+                    <svg class="sound-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6.8 9H3v6h3.8l4.2 4V5Zm4.5 3.5a5 5 0 0 1 0 7m2.8-10a9 9 0 0 1 0 13"/></svg>
+                    <svg class="sound-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6.8 9H3v6h3.8l4.2 4V5Zm5 5 5 5m0-5-5 5"/></svg>
+                </button>
+                <button class="reset-button" id="reset-game" type="button">Reset</button>
+            </div>
+        </header>
+
+        <section class="game-card" aria-labelledby="game-title">
+            <p class="eyebrow">Choose your move</p>
+            <h1 id="game-title">Rock. Paper. Scissors.</h1>
+
+            <div class="score-panel" aria-label="Score board">
+                <div class="player-score">
+                    <span>You</span>
+                    <strong id="user-score">0</strong>
+                </div>
+                <div class="round-info">
+                    <span id="round-label">Round 1</span>
+                    <div class="streak" title="Current winning streak">Streak <strong id="streak">0</strong></div>
+                </div>
+                <div class="computer-score">
+                    <span>Computer</span>
+                    <strong id="comp-score">0</strong>
+                </div>
+            </div>
+
+            <div class="battle" aria-live="polite">
+                <div class="battle-side">
+                    <span class="battle-label">You</span>
+                    <div class="battle-choice" id="user-choice" aria-label="Your choice">
+                        <span class="choice-placeholder">?</span>
+                    </div>
+                </div>
+                <div class="versus">VS</div>
+                <div class="battle-side">
+                    <span class="battle-label">CPU</span>
+                    <div class="battle-choice" id="computer-choice" aria-label="Computer choice">
+                        <span class="choice-placeholder">?</span>
+                    </div>
+                </div>
+            </div>
+
+            <p class="result-message" id="msg">Make your move</p>
+
+            <div class="choices" aria-label="Choose Rock, Paper or Scissors">
+                <button class="choice" id="Rock" type="button" aria-label="Choose Rock" data-key="1">
+                    <span class="choice-ring"><img src="images/rock.png" alt="Rock hand" width="150" height="150"></span>
+                    <span class="choice-name">Rock</span>
+                    <kbd>1</kbd>
+                </button>
+                <button class="choice" id="Paper" type="button" aria-label="Choose Paper" data-key="2">
+                    <span class="choice-ring"><img src="images/paper.png" alt="Paper hand" width="150" height="150"></span>
+                    <span class="choice-name">Paper</span>
+                    <kbd>2</kbd>
+                </button>
+                <button class="choice" id="Scissor" type="button" aria-label="Choose Scissors" data-key="3">
+                    <span class="choice-ring"><img src="images/scissor.png" alt="Scissors hand" width="150" height="150"></span>
+                    <span class="choice-name">Scissors</span>
+                    <kbd>3</kbd>
+                </button>
+            </div>
+        </section>
+
+        <div class="history-wrap">
+            <span>Recent rounds</span>
+            <div class="history" id="history" aria-label="Recent rounds"></div>
+        </div>
+    </main>
+    <script src="RPS.js"></script>
+</body>
+</html>

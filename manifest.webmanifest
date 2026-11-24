@@ -1,0 +1,17 @@
+{
+  "name": "Rock Paper Scissors",
+  "short_name": "RPS Game",
+  "description": "A fast and polished Rock Paper Scissors browser game.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#111633",
+  "theme_color": "#111633",
+  "icons": [
+    {
+      "src": "images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
